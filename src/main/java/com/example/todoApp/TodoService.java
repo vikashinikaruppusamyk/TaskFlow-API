@@ -1,6 +1,6 @@
-package com.example.myname;
+package com.example.todoApp;
 
-import com.example.myname.models.Todo;
+import com.example.todoApp.models.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

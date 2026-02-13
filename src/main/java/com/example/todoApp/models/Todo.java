@@ -1,4 +1,4 @@
-package com.example.myname.models;
+package com.example.todoApp.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

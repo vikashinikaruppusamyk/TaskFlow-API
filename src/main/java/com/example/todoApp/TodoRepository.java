@@ -1,6 +1,6 @@
-package com.example.myname;
+package com.example.todoApp;
 
-import com.example.myname.models.Todo;
+import com.example.todoApp.models.Todo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 //CRUD - Create Read Update Delete
