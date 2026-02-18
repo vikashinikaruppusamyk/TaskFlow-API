@@ -1,4 +1,4 @@
-package com.example.todoApp;
+package com.example.todoApp.repository;
 
 import com.example.todoApp.models.Todo;
 import org.springframework.data.jpa.repository.JpaRepository;
