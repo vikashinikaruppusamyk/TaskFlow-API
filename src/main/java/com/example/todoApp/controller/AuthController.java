@@ -23,14 +23,15 @@ public class AuthController {
     private final PasswordEncoder passwordEncoder;
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody Map<String, String> body) {
+    public ResponseEntity<Map<String, String>> register(@RequestBody Map<String, String> body) {
         String email = body.get("email");
         String password = passwordEncoder.encode(body.get("password"));
         if (userRepo.findByEmail(email).isPresent()) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Email already exists");
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(Map.of("message", "Email already exists"));
         }
         userService.createUser(User.builder().email(email).password(password).build());
-        return ResponseEntity.ok("User registered");
+        return ResponseEntity.ok(Map.of("message", "User registered"));
     }
 
     @PostMapping("/login")
@@ -40,12 +41,14 @@ public class AuthController {
 
         var userOpt = userRepo.findByEmail(email);
         if (userOpt.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(Map.of("message", "Invalid email"));
         }
 
         var user = userOpt.get();
         if (!passwordEncoder.matches(password, user.getPassword())) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(Map.of("message", "Invalid email or password"));
         }
 
         String token = jwtUtil.generateToken(email);
