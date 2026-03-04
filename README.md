@@ -4,13 +4,11 @@
 - Backend: Spring Boot (Java)
 - Frontend: HTML, CSS, JavaScript
 - Authentication: JWT
-- Database: (your DB here)
+- Database: PostgreSQL
 
 ## Project Structure
 backend → Spring Boot REST API  
 frontend → UI client  
-
-## How to Run
 
 ### Backend
 cd backend
