@@ -225,3 +225,9 @@ Time-dependent tests use a controllable `Clock`, so cycle times and token expiry
   match the migrations.
 - **Secrets outside the code.** Database password and JWT secret come from `local.properties` or environment
   variables; the app fails fast if the JWT secret is missing or too short.
+
+## What I Learned
+- Structuring a Spring Boot app with clear separation between controllers, services, and repositories
+- Implementing stateless auth with JWT and wiring a custom filter into the Spring Security filter chain
+- Designing a REST API consumed by a separate static frontend, including handling CORS
+- Using Bean Validation and consistent error responses across endpoints
