@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>TaskFlow</title>
+    <script>
+        // Logged-in users go straight to their tasks, everyone else to the login page
+        window.location.replace(localStorage.getItem("accessToken") ? "tasks.html" : "login.html");
+    </script>
+</head>
+<body>
+    <noscript>TaskFlow needs JavaScript. <a href="login.html">Go to login</a></noscript>
+</body>
+</html>

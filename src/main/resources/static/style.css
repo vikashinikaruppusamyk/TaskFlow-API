@@ -1,0 +1,243 @@
+/* Reset and base styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+}
+
+/* Reusable container */
+.container {
+    width: 100%;
+    max-width: 560px;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.brand {
+    text-align: center;
+    color: #1976d2;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Headings */
+.container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.header h2 {
+    margin-bottom: 0;
+}
+
+.switch-page {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Generic form layout */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 0.6rem 1rem;
+    border: 2px solid #1976d2;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+}
+
+/* All buttons */
+button {
+    padding: 0.6rem 1rem;
+    background: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+button:hover {
+    background: #125ea7;
+}
+
+.link-btn {
+    width: auto;
+    margin: 0;
+    background: transparent;
+    color: #1976d2;
+    border: 2px solid #1976d2;
+    padding: 0.35rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+.link-btn:hover {
+    background: #e3f2fd;
+}
+
+/* Tasks */
+.add-task {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.add-task input {
+    flex: 1;
+}
+
+.add-task button {
+    width: auto;
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+.task-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.task-card {
+    background-color: #f0f8ff;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #d1e6fb;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.task-title {
+    flex-grow: 1;
+    font-size: 1rem;
+    color: #333;
+    overflow-wrap: anywhere;
+}
+
+.task-card.completed .task-title {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.task-status {
+    padding: 0.3rem 0.4rem;
+    border: 2px solid #1976d2;
+    border-radius: 6px;
+    background: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background: #ff4d4d;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-weight: bold;
+    width: auto;
+    margin: 0;
+}
+
+.delete-btn:hover {
+    background: #d93636;
+}
+
+#empty-message {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* Process insights */
+.insights {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.insights h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.insights h4 {
+    color: #555;
+    margin: 1rem 0 0.5rem;
+    font-size: 0.95rem;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.stat {
+    background: #f0f8ff;
+    border: 1px solid #d1e6fb;
+    border-radius: 8px;
+    padding: 0.6rem 0.4rem;
+    text-align: center;
+}
+
+.stat span {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1976d2;
+}
+
+.stat label {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.variants {
+    padding-left: 1.25rem;
+    color: #444;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.25rem;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

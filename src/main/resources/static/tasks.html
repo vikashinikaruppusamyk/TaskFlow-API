@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow – Your Tasks</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Your Tasks</h2>
+            <button class="link-btn" onclick="logout()">Log out</button>
+        </div>
+
+        <div class="add-task">
+            <input type="text" id="new-task" placeholder="Add a new task" maxlength="200" />
+            <button onclick="addTask()">Add</button>
+        </div>
+
+        <div id="task-list" class="task-cards">
+            <p id="empty-message">Loading your tasks...</p>
+        </div>
+
+        <section id="insights" class="insights">
+            <h3>Process insights</h3>
+            <div class="stats">
+                <div class="stat"><span id="stat-cases">–</span><label>Cases</label></div>
+                <div class="stat"><span id="stat-open">–</span><label>Open</label></div>
+                <div class="stat"><span id="stat-cycle">–</span><label>Avg. cycle time</label></div>
+                <div class="stat"><span id="stat-rework">–</span><label>Rework rate</label></div>
+            </div>
+            <h4>Top process variants</h4>
+            <ol id="variant-list" class="variants"></ol>
+            <button onclick="exportEventLog()">Export event log (CSV)</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
